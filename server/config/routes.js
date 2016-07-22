@@ -1,12 +1,23 @@
-module.exports = function(app){
-	app.post('/dummies/:test', function(req, res){
-		
-		// I'm testing the info that I'm getting from my dummy Factory
-		// I console.log the body and the params just to make sure that it's
-		// going through 
+var polls = require('./../controllers/mongooses.js');
 
-		console.log(req.body);
-		console.log(req.params.test)
-		// mongooseController.getMongooses(req, res);
+module.exports = function(app){
+	app.post('/polls', function(req, res){
+		console.log("made it to app.post /polls");
+		polls.addPoll(req, res);
+	})
+
+	app.post('/questions', function(req, res){
+		console.log("made it to app.post /questions");
+		polls.addQuestion(req, res);
+	})
+
+	app.get('/polls', function(req, res){
+		console.log("made it to app.get /polls");
+		polls.getPolls(req, res);
+	})
+
+	app.get('/question/:id', function(req, res){
+		console.log("made it to app.get /question");
+		polls.getQuestion(req, res);
 	})
 }

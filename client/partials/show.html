@@ -1,0 +1,16 @@
+<h1>Show</h1>
+
+<a href="#/dash">Go To Polls</a>
+
+<h3>What would you rather do?</h3>
+<p>Click the Vote button to choose one</p>
+
+<table>
+	<thead>
+		<tr><th>Option</th><th>Current Count of Votes</th><th>Action</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>Skydive</td><td>28</td><td><a href=""><button>Vote</button></td></a></tr>
+		<tr ng-repeat="q in question"><td>{{q}}</td></tr>
+	</tbody>
+</table>

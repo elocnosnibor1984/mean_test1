@@ -1,0 +1,17 @@
+<h1>Dashboard</h1>
+
+<a href="#/create">Create a New Poll</a> <a><button ng-click="logout()">Logout</button></a>
+
+<h3>Current Polls</h3>
+<!-- {{polls}} -->
+<input type='text' ng-model='filter_name' placeholder='search name...'>
+<table>
+	<thead>
+		<tr><th>Name</th><th>Survey Question</th><th>Date Posted</th><th>Action</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>Cole</td><td><a href="#/show">
+		What would you rather do?</a></td><td>July 22, 2016</td><td><a href="">Delete</a></td></tr>
+		<tr ng-repeat="p in polls | filter: filter_name"><td>{{p.name}}</td><td><a href="#/show/{{p.question}}">{{p.question}}</a></td><td>{{p.created_at}}</td><td>Delete</td></tr>
+	</tbody>
+</table>
